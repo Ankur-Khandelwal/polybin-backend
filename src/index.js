@@ -5,7 +5,7 @@ const path = require('path');
 const cors = require('cors');
 
 // routes
-// const authRoutes = require('./routes/auth');
+const polyRoutes = require('./routes/polyRoute.js');
 // const adminAuthRoutes = require('./routes/admin/auth');
 // const categoryRoutes = require('./routes/category');
 // const productRoutes = require('./routes/product');
@@ -22,7 +22,7 @@ const PORT = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 app.use('/public', express.static(path.join(__dirname, 'uploads')));
-// app.use('/api', authRoutes);
+app.use('/api', polyRoutes);
 // app.use('/api', adminAuthRoutes);
 // app.use('/api', categoryRoutes);
 // app.use('/api', productRoutes);
